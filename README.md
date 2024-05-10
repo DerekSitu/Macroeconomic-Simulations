@@ -80,6 +80,8 @@ $$
 \lim_{t \to \infty} \beta ^t u'(c_t) k_{t+1} = \beta ^t c_t^{- \sigma} k_{t+1} = 0.
 $$
 
+The script *ramsey.mod* simulates a purely transitory unit shock to $A_t$ and shows how consumption and capital evolve over time.
+
 # Real business cycle model
 
 The household maximizes their utility by choosing consumption $c_t$, labour to supply $n_t$, capital $k_{t+1}$, and bonds $b_{t+1}$, solving
@@ -195,3 +197,28 @@ N_t^{\alpha} &= \frac{1- \alpha}{W_t} e^{Z_t} K_t^{\alpha} \\
 N_t &= \left( \frac{1- \alpha}{W_t} e^{Z_t} \right) ^{\frac{1}{\alpha}} K_t.
 \end{align}
 $$
+
+The script *rbc.mod* models a shock to the AR(1) process $Z_t = 0.96 Z_{t-1} + \epsilon_t$.
+
+# Monetary policy
+
+## New Keynesian model
+
+We can model an economy with the New Keynesian Phillips Curve and IS Curve:
+
+$$
+\begin{align}
+\pi_t &= \beta E_t \pi_{t+1} + \kappa x_t \\
+x_t &= Et X_{t+1} - \frac{1}{\sigma}(i_t - E_t \pi_{t+1}) + u_t
+\end{align}
+$$
+
+where $\pi_t$ is inflation at time $t$, $x_t$ is the output gap, $i_t$ is the policy interest rate, and $u_t = 0.65 u_{t-1} + \epsilon_t$ is an AR(1) shock to demand. 
+
+The central bank practices flexible inflation targeting, setting the policy rate in response to a weighted sum of inflation and the output gap:
+
+$$
+i_t = 1.5 \pi_t + 0.5 x_t.
+$$
+
+We can have rational expectations of inflation and output gap, that is $E_t \pi_{t+1} = \pi_{t+1}$ and $E_t x_{t+1} = x_{t+1}$, or we can allow some form of irrational expectations such as $E_t \pi_{t+1} = \pi_{t-1}$ and $E_t x_{t+1} = x_{t-1}$. As we can see in the simulations in *nk_rational.mod* and *nk_irrational.mod*, the output gap and inflation take a lot longer to stabilize when economic agents have this form of irrational expectations.
