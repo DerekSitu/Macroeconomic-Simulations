@@ -24,17 +24,17 @@ with first order conditions
 $$
 \begin{align}
 \frac{\partial \mathcal{L}}{\partial c_t} &= \beta ^t u'(c_t) - \lambda_t = 0 \tag{1} \\
-\frac{\partial \mathcal{L}}{\partial k_{t+1}} &= - \lambda_t + \lambda_{t+1} (f'(A_t, k_{t+1}) + (1- \delta)) = 0 \tag{2}
+\frac{\partial \mathcal{L}}{\partial k_{t+1}} &= - \lambda_t + \lambda_{t+1} (f'(A_t, k_{t+1}) + (1- \delta)) = 0. \tag{2}
 \end{align}
 $$
 
-From (1) we see
+From the first FOC we see
 
 $$
 \lambda_t = \beta^t u'(c_t).
 $$
 
-Plugging this into (2) yields the consumption evolution equation:
+Plugging this into the second FOC yields the consumption evolution equation:
 
 $$
 \begin{align}
@@ -115,7 +115,7 @@ $$
 \end{align}
 $$
 
-From (1) and (2),
+From the first and second FOCs,
 
 $$
 \lambda_t = \beta^t (1- \sigma) \frac{1}{c_t} = \beta^t \frac{\sigma}{1-n_t} \frac{1}{w_t},
@@ -129,7 +129,7 @@ $$
 
 giving the intra-temporal tradeoff condition.
 
-From (1) and (3) we get the Euler equation:
+From the first and third FOCs we get the Euler equation:
 
 $$
 \begin{align}
@@ -139,7 +139,7 @@ $$
 \end{align}
 $$
 
-Also from (3) and (4) it is clear that
+Also from the third and fourth FOCs it is clear that
 
 $$
 R_{t+1} = r_{t+1} + 1 - \delta.
@@ -172,7 +172,7 @@ $$
 \end{align}
 $$
 
-From (1),
+From the first FOC,
 
 $$
 r_t = \alpha e^{Z_t} \left( \frac{K_t}{N_t} \right)^{\alpha - 1} = \alpha \frac{Y_t}{K_t}, \hspace{2em} \text{and}
@@ -185,7 +185,7 @@ r_t N_t^{\alpha-1} &= \alpha e^{Z_t} K_t^{\alpha - 1} \\
 \end{align}
 $$
 
-And from (2),
+And from the second FOC,
 
 $$
 W_t = (1- \alpha) e^{Z_t} \left( \frac{K_t}{N_t} \right)^{\alpha} = (1- \alpha) \frac{Y_t}{N_t}, \hspace{2em} \text{and}
